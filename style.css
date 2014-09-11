@@ -8,8 +8,8 @@ background: #FFF444;
 #wrapper{ 
 background: white; 
 height: auto; 
-min-height: 550px; 
-width: 1000px; 
+min-height: 750px; 
+width: 930px; 
 margin: 20px auto; 
 margin-left: auto; 
 margin-right: auto; 
@@ -18,8 +18,9 @@ text-align: center;
 }
 
 header{ 
-	width: 1000px; 
-	height: 150px; 
+	width: 930px; 
+	min-height: 150px; 
+	height: auto;
 	background: #d0e4fe; 
 } 
 
@@ -27,11 +28,37 @@ h1{
 	margin: auto; 
 	margin-top: 5%; 
 	display: inline-block; 
+
+}
+
+p{ 
+	margin: auto; 
+	margin-top: 5%; 
+	display: inline-block; 
+	font-size: 120%; 
+} 
+
+#content{ 
+margin: auto; 
+display: inline-block; 
+}
+
+#howtoplay{ 
+	margin: auto; 
+	margin-left: 5%; 
+	float: left;
+}
+
+#whatis{ 
+	margin: auto; 
+	margin-right: 5%; 
+	float: right;
 }
 
 div#boxers{ 
-	background: #orange; 
-	height: 500px; 
+	background: orange; 
+	min-height: 500px; 
+	height: auto; 
 	width: 900px; 
 	margin top: auto; 
 	margin-bottom: 50px; 

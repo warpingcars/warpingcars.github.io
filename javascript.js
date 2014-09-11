@@ -1,4 +1,4 @@
-var memory_array = ['green','green','green','red','red','red','black','black','black', 'turquoise', 'turquoise', 'turquoise', 'yellow', 'yellow', 'yellow', 'pink', 'pink', 'pink', 'purple', 'purple', 'purple']; 
+var memory_array = ['yellow', 'yellow', 'yellow', 'blue', 'blue', 'blue', 'lime', 'lime', 'lime', 'green','green','green', 'black','black','black', 'pink', 'pink', 'pink', 'purple', 'purple', 'purple', 'street_pete', 'street_pete', 'street_pete', 'tile_bg', 'tile_bg', 'tile_bg']; 
 var memory_values = []; 
 var memory_tile_ids = []; 
 var tiles_flipped = 0; 
@@ -18,7 +18,7 @@ document.getElementById('box').innerHTML = output;
 } 
 function memoryFlipTile(tile,val){ if(tile.innerHTML == "" && memory_values.length < 3)
 { 
-tile.style.background = val; tile.innerHTML = ''; 
+tile.style.background = 'url('+val+'.jpg) no-repeat'; tile.innerHTML = ''; 
 if(memory_values.length == 0){ 
 memory_values.push(val); memory_tile_ids.push(tile.id); } else 
 if(memory_values.length == 1){ 
@@ -27,8 +27,8 @@ if(memory_values.length == 2){
 memory_values.push(val); memory_tile_ids.push(tile.id); 
 if(memory_values[0] == memory_values[1] && memory_values[1] == memory_values[2] && memory_values[0] == memory_values[2]){ 
 tiles_flipped += 3; memory_values = []; memory_tile_ids = []; 
-if(tiles_flipped == memory_array.length){ alert("Congratulations! Refresh page to restart game..."); 
-document.getElementById('memory_board').innerHTML = ""; newBoard(); } } else { 
+if(tiles_flipped == memory_array.length){ alert("Congratulations! Click OK to play again..."); 
+document.getElementById('box').innerHTML = ""; newBoard(); } } else { 
 	function flip2Back(){ 
 var tile_1 = document.getElementById(memory_tile_ids[0]); 
 var tile_2 = document.getElementById(memory_tile_ids[1]); 
@@ -36,4 +36,4 @@ var tile_3 = document.getElementById(memory_tile_ids[2]);
 tile_1.style.background = 'url(rainbow-icon.png) no-repeat'; tile_1.innerHTML = ""; 
 tile_2.style.background = 'url(rainbow-icon.png) no-repeat'; tile_2.innerHTML = ""; 
 tile_3.style.background = 'url(rainbow-icon.png) no-repeat'; tile_3.innerHTML = ""; 
-memory_values = []; memory_tile_ids = []; } setTimeout(flip2Back, 500); } } } } 
+memory_values = []; memory_tile_ids = []; } setTimeout(flip2Back, 500); } } } }   
