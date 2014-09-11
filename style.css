@@ -70,7 +70,7 @@ div#boxers{
 } 
 
 div#box > div{ 
-	background: url(rainbow_icon.jpg) no-repeat;
+	background: url(tile_bg.jpg) no-repeat;
 	border:#000 1px solid; 
 	width:71px; 
 	height:71px; 
