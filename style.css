@@ -9,7 +9,7 @@ background: #FFF444;
 background: white; 
 height: auto; 
 min-height: 750px; 
-width: 930px; 
+width: 950px; 
 margin: 20px auto; 
 margin-left: auto; 
 margin-right: auto; 
@@ -18,7 +18,7 @@ text-align: center;
 }
 
 header{ 
-	width: 930px; 
+	width: 950px; 
 	min-height: 150px; 
 	height: auto;
 	background: #d0e4fe; 
@@ -70,7 +70,7 @@ div#boxers{
 } 
 
 div#box > div{ 
-	background: url(rainbow-icon.png) no-repeat;
+	background: url(rainbow_icon.jpg) no-repeat;
 	border:#000 1px solid; 
 	width:71px; 
 	height:71px; 

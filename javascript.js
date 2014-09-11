@@ -33,7 +33,7 @@ document.getElementById('box').innerHTML = ""; newBoard(); } } else {
 var tile_1 = document.getElementById(memory_tile_ids[0]); 
 var tile_2 = document.getElementById(memory_tile_ids[1]); 
 var tile_3 = document.getElementById(memory_tile_ids[2]); 
-tile_1.style.background = 'url(rainbow-icon.png) no-repeat'; tile_1.innerHTML = ""; 
-tile_2.style.background = 'url(rainbow-icon.png) no-repeat'; tile_2.innerHTML = ""; 
-tile_3.style.background = 'url(rainbow-icon.png) no-repeat'; tile_3.innerHTML = ""; 
+tile_1.style.background = 'url(rainbow_icon.jpg) no-repeat'; tile_1.innerHTML = ""; 
+tile_2.style.background = 'url(rainbow_icon.jpg) no-repeat'; tile_2.innerHTML = ""; 
+tile_3.style.background = 'url(rainbow_icon.jpg) no-repeat'; tile_3.innerHTML = ""; 
 memory_values = []; memory_tile_ids = []; } setTimeout(flip2Back, 500); } } } }   
