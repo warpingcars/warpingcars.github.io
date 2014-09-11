@@ -53,6 +53,20 @@ display: inline-block;
 	margin: auto; 
 	margin-right: 5%; 
 	float: right;
+} 
+
+#flipcount{ 
+	margin-top: -25px; 
+	margin-bottom: auto; 
+	margin-right: 5%; 
+	float: right;
+} 
+
+#gamepercentage{ 
+	margin-top: -25px; 
+	margin-bottom: auto; 
+	margin-left: 5%; 
+	float: left; 
 }
 
 div#boxers{ 
