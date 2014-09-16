@@ -40,7 +40,7 @@ else if(memory_values.length == 2)
 memory_values.push(val); memory_tile_ids.push(tile.id); 
 if(memory_values[0] == memory_values[1] && memory_values[1] == memory_values[2] && memory_values[0] == memory_values[2]){ 
 tiles_flipped += 3; memory_values = []; memory_tile_ids = []; memory_flipped = [1]; 
-if(tiles_flipped == memory_array.length){ alert("Congratulations! Click OK to play again..."); 
+if(tiles_flipped == memory_array.length){ alert("Congratulations!!! \nYou #1 on the leaderboads! \nScore: "+tiles_flipped+"moves \nTime: 359 seconds"); 
 document.getElementById('box').innerHTML = ""; newBoard(); } } else { 
 	function flip2Back(){ 
 var tile_1 = document.getElementById(memory_tile_ids[0]); 
