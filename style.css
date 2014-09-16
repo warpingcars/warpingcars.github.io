@@ -19,14 +19,21 @@ text-align: center;
 
 header{ 
 	width: 935px; 
-	min-height: 150px; 
+	min-height: 100px; 
 	height: auto;
 	background: #d0e4fe; 
 } 
 
+audio{ 
+	margin: auto; 
+	margin-top: 10px; 
+	display: inline-block; 
+
+}
+
 h1{ 
 	margin: auto; 
-	margin-top: 5%; 
+	margin-top: 10px; 
 	display: inline-block; 
 
 }

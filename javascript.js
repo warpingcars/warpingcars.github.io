@@ -26,6 +26,7 @@ function memoryFlipTile(tile,val){ if(tile.innerHTML == "" && memory_values.leng
 { 
 tile.style.background = 'url('+val+'.jpg) no-repeat'; tile.innerHTML = ''; 
 //if(memory_values == "street_pete"){flip2Back();}  
+
 if(memory_values.length == 0)
 { 
 memory_values.push(val); memory_tile_ids.push(tile.id); 
