@@ -2,13 +2,13 @@
 
 
 body{ 
-background: #FFF444; 
+background: gold; 
 } 
 
 #wrapper{ 
-background: white; 
+background: #FFA135; 
 height: auto; 
-min-height: 560px; 
+min-height: 590px; 
 width: 935px; 
 margin: 20px auto; 
 margin-left: auto; 
@@ -21,9 +21,11 @@ header{
 	width: 935px; 
 	min-height: 100px; 
 	height: auto;
-	background: #d0e4fe; 
+	background: #FF7435;  
+	
 } 
-
+#d0e4fe{} 
+#FFF444{} 
 audio{ 
 	margin: auto; 
 	margin-top: 10px; 
@@ -43,6 +45,7 @@ p{
 	margin-top: 5%; 
 	display: inline-block; 
 	font-size: 120%; 
+	color: #33FFFF;
 } 
 
 #content{ 
