@@ -1,11 +1,5 @@
 var memory_array = 
-['yellow', 'yellow', 'yellow', 
-'blue', 'blue', 'blue', 
-'lime', 'lime', 'lime', 
-'black','black','black', 
-'waldo', 'waldo', 'waldo', 
-'purple', 'purple', 'purple', 
-'street_pete', 'street_pete', 'street_pete']; 
+['yellow', 'yellow', 'yellow', 'blue', 'blue', 'blue', 'lime', 'lime', 'lime', 'black','black','black', 'waldo', 'waldo', 'waldo', 'purple', 'purple', 'purple', 'street_pete', 'street_pete', 'street_pete']; 
 
 var memory_values = []; 
 var memory_tile_ids = []; 
@@ -75,12 +69,7 @@ function memoryFlipTile(tile,val)
 			if(tiles_flipped == memory_array.length) 
 				{ 
 					new Audio('mp3/enchanted_valley.mp3').play(); 
-					alert("You won. \n
-						Congratulations!!! \n
-						Leaderboard rank: #1 \n
-						Score: "+tiles_flipped+" moves \n
-						Time: 359 seconds \n\n 
-						Click OK to play again... "); 
+					alert("You won. \nCongratulations!!! \nLeaderboard rank: #4 \nScore: "+tiles_flipped+" moves \nTime: 253 seconds \n\n Click OK to play again... "); 
 					document.getElementById('box').innerHTML = ""; 
 					newBoard(); 
 				} 
