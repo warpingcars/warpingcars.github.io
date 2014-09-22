@@ -1,11 +1,30 @@
-var memory_array = 
-['yellow', 'yellow', 'yellow', 'blue', 'blue', 'blue', 'lime', 'lime', 'lime', 'black','black','black', 'waldo', 'waldo', 'waldo', 'purple', 'purple', 'purple', 'street_pete', 'street_pete', 'street_pete']; 
+var memory_array = ['yellow', 'yellow', 'yellow', 'blue', 'blue', 'blue', 'lime', 'lime', 'lime', 'black','black','black', 'waldo', 'waldo', 'waldo', 'purple', 'purple', 'purple', 'street_pete', 'street_pete', 'street_pete']; 
 
 var memory_values = []; 
 var memory_tile_ids = []; 
 var tiles_flipped = 0; 
+var completed = 0; 
 var memory_flipped = []; 
+var seconds = 0; 
 
+$( document ).ready( function(){ 		 
+setInterval(function () {
+seconds += 1; 
+gamingtime.innerHTML = "Gaming time: "+seconds+" s"; 
+
+}, 1000); 
+/*
+		if(memory_values[0] == "street_pete" 
+		|| memory_values[1] == street_pete 
+		|| memory_values[2] == street_pete); 
+		{ 
+		alert("pete"); 
+		}
+					var tile_2 = document.getElementById(tile_2); 
+					tile_2.style.background = 'url(img/street_pete.jpg) no-repeat'; 
+					tile_2.innerHTML = ""; 
+¨*/
+}); 
 
 Array.prototype.memory_tile_shuffle = function()
 { 	
@@ -23,7 +42,9 @@ Array.prototype.memory_tile_shuffle = function()
 
 function newBoard()
 { 
-	tiles_flipped = 0; var output = ''; 
+	tiles_flipped = 0; 
+	completed = 0; 
+	var output = ''; 
 	memory_array.memory_tile_shuffle(); 
 
 for(var i = 0; i < memory_array.length; i++) 
@@ -43,33 +64,41 @@ function memoryFlipTile(tile,val)
 		
 		if(memory_values.length == 0) //One tile flipped. 
 		{ 
-		memory_values.push(val); 
-		memory_tile_ids.push(tile.id); 
+			memory_values.push(val); 
+			memory_tile_ids.push(tile.id); 
+			tiles_flipped += 1; 
+			flipcount.innerHTML = "Tiles flipped: "+tiles_flipped+""; 
 		}
 
 		else if(memory_values.length == 1) //Two tiles flipped. 
 		{ 
 			memory_values.push(val); 
 			memory_tile_ids.push(tile.id); 
+			tiles_flipped += 1; 
+			flipcount.innerHTML = "Tiles flipped: "+tiles_flipped+""; 
 		} 
 		else if(memory_values.length == 2) //Three tiles flipped. 
 		{ 
 				memory_values.push(val); 
 				memory_tile_ids.push(tile.id); 
+				tiles_flipped += 1; 
+				flipcount.innerHTML = "Tiles flipped: "+tiles_flipped+""; 
+				
 				if(memory_values[0] == memory_values[1] 
 				&& memory_values[1] == memory_values[2] 
 				&& memory_values[0] == memory_values[2]) 
 				{ 
-					tiles_flipped += 3; 
+					completed += 3; 
 					memory_values = []; 
 					memory_tile_ids = []; 
 					memory_flipped = [1]; 
 					new Audio('mp3/lol.mp3').play(); //Tile one, two and three are the same. 
 
-			if(tiles_flipped == memory_array.length) 
+			if(completed == memory_array.length) 
 				{ 
 					new Audio('mp3/enchanted_valley.mp3').play(); 
-					alert("You won. \nCongratulations!!! \nLeaderboard rank: #4 \nScore: "+tiles_flipped+" moves \nTime: 253 seconds \n\n Click OK to play again... "); 
+					var scoreconstant = Math.ceil(250 - 1/100*seconds * tiles_flipped + 15); 
+					alert("You won. \nCongratulations!!! \nLeaderboard rank: ??? \nTiles flipped: "+tiles_flipped+" \nTime: "+seconds+" seconds \n\nScore: "+scoreconstant+" Click OK to play again... "); 
 					document.getElementById('box').innerHTML = ""; 
 					newBoard(); 
 				} 
@@ -90,7 +119,6 @@ function memoryFlipTile(tile,val)
 					tile_3.innerHTML = ""; 
 					memory_values = []; 
 					memory_tile_ids = []; 
-
 				} 
 				setTimeout(flip2Back, 500); 
 			} 
