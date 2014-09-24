@@ -11,7 +11,6 @@ $( document ).ready( function(){
 setInterval(function () {
 seconds += 1; 
 gamingtime.innerHTML = "Gaming time: "+seconds+" s"; 
-
 }, 1000); 
 /*
 		if(memory_values[0] == "street_pete" 
@@ -42,8 +41,11 @@ Array.prototype.memory_tile_shuffle = function()
 
 function newBoard()
 { 
-	tiles_flipped = 0; 
 	completed = 0; 
+	tiles_flipped = 0; 
+	flipcount.innerHTML = "Tiles flipped: "+tiles_flipped+""; 
+	seconds= 0; 
+	gamingtime.innerHTML = "Gaming time: "+seconds+" s"; 
 	var output = ''; 
 	memory_array.memory_tile_shuffle(); 
 
