@@ -1,0 +1,119 @@
+
+
+
+
+body{ 
+background: black; 
+} 
+
+#wrapper{ 
+bckground: #FFA135; 
+background: black; 
+height: auto; 
+min-height: 590px; 
+width: 935px; 
+margin: 20px auto; 
+margin-left: auto; 
+margin-right: auto; 
+box-shadow: 1px 1px 10px 3px white; 
+text-align: center; 
+border-radius: 25px;
+}
+
+header{ 
+	width: 935px; 
+	min-height: 100px; 
+	height: auto;
+	bckground: #FF7435;  
+	bckground: #33FFFF; 
+	background: #231F20; 
+	border-radius: 25px;
+	
+} 
+#d0e4fe{} 
+#FFF444{} 
+audio{ 
+	margin: auto; 
+	margin-top: 10px; 
+	display: inline-block; 
+
+}
+
+h1{ 
+	margin: auto; 
+	margin-top: 10px; 
+	display: inline-block; 
+	color: white;
+
+}
+
+p{ 
+	margin: auto; 
+	margin-top: 5%; 
+	display: inline-block; 
+	font-size: 120%; 
+	color: white;
+} 
+
+a{ 
+	color: white;
+} 
+
+#content{ 
+margin: auto; 
+display: inline-block; 
+}
+
+#howtoplay{ 
+	margin: auto; 
+	margin-left: 5%; 
+	float: left;
+}
+
+#whatis{ 
+	margin: auto; 
+	margin-right: 5%; 
+	float: right;
+} 
+
+#flipcount{ 
+	margin-top: -25px; 
+	margin-bottom: auto; 
+	margin-right: 5%; 
+	float: right;
+} 
+
+#gamingtime{ 
+	margin-top: -25px; 
+	margin-bottom: auto; 
+	margin-left: 5%; 
+	float: left; 
+}
+
+div#boxers{ 
+	background: orange; 
+	min-height: 300px; 
+	height: auto; 
+	width: 900px; 
+	margin top: auto; 
+	margin-bottom: 50px; 
+	margin-left: auto; 
+	margin-right: auto; 
+	vertical-align: top; 
+	display: inline-block; 
+	text-align: center; 
+} 
+
+div#box > div{ 
+	background: url(../img/tile_bg.jpg) no-repeat;
+	border: white 1px solid; 
+	border-radius: 100px;
+	width:71px; 
+	height:71px; 
+	margin: 10px; 
+	padding:20px; 
+	font-size:64px; 
+	cursor:pointer; 
+	text-align:center; 
+	float: left; 
+}
