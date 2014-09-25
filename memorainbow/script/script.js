@@ -98,10 +98,7 @@ function memoryFlipTile(tile,val)
 
 			if(completed == memory_array.length) 
 				{ 
-					new Audio('mp3/lol.mp3').play().delay(300); 
-					new Audio('mp3/lol.mp3').play().delay(600); 
-					new Audio('mp3/lol.mp3').play().delay(900);
-					new Audio('mp3/lol.mp3').play().delay(100);  
+					new Audio('mp3/lol.mp3').play(); 
 					var scoreconstant = Math.ceil(250 - 1/100*seconds * tiles_flipped + 15); 
 					alert("You won. \nCongratulations!!! \nLeaderboard rank: ??? \nTiles flipped: "+tiles_flipped+" \nTime: "+seconds+" seconds \n\nScore: "+scoreconstant+" Click OK to play again... "); 
 					document.getElementById('box').innerHTML = ""; 
