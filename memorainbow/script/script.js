@@ -7,11 +7,14 @@ var completed = 0;
 var memory_flipped = []; 
 var seconds = 0; 
 
-$( document ).ready( function(){ 		 
-setInterval(function () {
+function restartTimer(){		 
+seconds= 0; 
+gamingtime.innerHTML = "Gaming time: "+seconds+" s"; 
+setInterval(function () { 
 seconds += 1; 
 gamingtime.innerHTML = "Gaming time: "+seconds+" s"; 
 }, 1000); 
+}
 /*
 		if(memory_values[0] == "street_pete" 
 		|| memory_values[1] == street_pete 
@@ -43,9 +46,7 @@ function newBoard()
 { 
 	completed = 0; 
 	tiles_flipped = 0; 
-	flipcount.innerHTML = "Tiles flipped: "+tiles_flipped+""; 
-	seconds= 0; 
-	gamingtime.innerHTML = "Gaming time: "+seconds+" s"; 
+	flipcount.innerHTML = "Tiles flipped: 0"; 
 	var output = ''; 
 	memory_array.memory_tile_shuffle(); 
 
@@ -54,6 +55,7 @@ for(var i = 0; i < memory_array.length; i++)
 	output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>'; 
 } 
 document.getElementById('box').innerHTML = output; 
+restartTimer(); 
 } 
 
 
