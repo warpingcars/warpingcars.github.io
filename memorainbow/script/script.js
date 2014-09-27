@@ -7,14 +7,11 @@ var completed = 0;
 var memory_flipped = []; 
 var seconds = 0; 
 
-function restartTimer(){		 
-seconds= 0; 
-gamingtime.innerHTML = "Gaming time: "+seconds+" s"; 
+$(document).ready(function(){		 
 setInterval(function () { 
 seconds += 1; 
 gamingtime.innerHTML = "Gaming time: "+seconds+" s"; 
-}, 1000); 
-}
+}, 1000); });
 /*
 		if(memory_values[0] == "street_pete" 
 		|| memory_values[1] == street_pete 
@@ -26,7 +23,7 @@ gamingtime.innerHTML = "Gaming time: "+seconds+" s";
 					tile_2.style.background = 'url(img/street_pete.jpg) no-repeat'; 
 					tile_2.innerHTML = ""; 
 ¨*/
-}); 
+ 
 
 Array.prototype.memory_tile_shuffle = function()
 { 	
@@ -45,6 +42,8 @@ Array.prototype.memory_tile_shuffle = function()
 function newBoard()
 { 
 	completed = 0; 
+	seconds = 0; 
+	gamingtime.innerHTML = "Gaming time: "+seconds+" s"; 
 	tiles_flipped = 0; 
 	flipcount.innerHTML = "Tiles flipped: 0"; 
 	var output = ''; 
