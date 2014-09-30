@@ -1,0 +1,127 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>	
+<title>For-loop, oppgave 4</title>
+
+<style>
+	body{
+		background: #fff;
+	}
+
+	#content{
+		position: relative;
+		padding: 20px;
+		background: #eee;
+		min-height: 500px;
+	} 
+	
+	#kateter{ 
+		position: absolute; 
+		bottom: 0; 
+		padding: 10px;
+		background: red;
+		color: white; 
+		margin-left: 47.4%;
+		margin-bottom: 100px; 
+		display:inline-block;
+		font-family: arial;
+	} 
+
+	#info{ 
+		bottom: 0; 
+		margin-bottom: 50px; 
+		margin-left: 39.5%; 
+		font-family: arial; 
+		position: absolute;
+	} 
+
+	.studentpult{ 
+		padding: 10px; 
+		width: 80px; 
+		height: 40px;
+		background: black;
+		color: white; 
+		margin-left: 10px;
+		margin-top: 30px; 
+		display:inline-block; 
+	} 
+
+	#studentareal{ 
+	background: white; 
+	height: auto; 
+	min-height: 590px; 
+	width: 935px; 
+	margin-left: auto; 
+	margin-right: auto; 
+	box-shadow: 1px 1px 10px 3px #000000; 
+	text-align: center; 
+	border-radius: 25px; 
+	} 
+
+</style>
+<script>
+	
+
+
+	function startArray() 
+	{
+		document.getElementById("studentareal").innerHTML = ''; 
+		writeArray(); 
+	}
+
+	function deleteArray() 
+	{
+		document.getElementById("studentareal").innerHTML = '';  
+	}
+
+
+	Array.prototype.studentArray_shuffle = function()
+	{ 	
+		var i = this.length, j, temp; 
+		
+		while(--i > 0) 
+		{ 
+			j = Math.floor(Math.random() * (i+1)); 
+			temp = this[j]; 
+			this[j] = this[i]; 
+			this[i] = temp; 
+		} 
+	} 
+
+	function writeArray() 
+	{
+			var output = ''; 
+			var studentArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"]; 
+			studentArray.studentArray_shuffle(); 
+			for (var i = 0; i < studentArray.length; i++) 
+			{ 		
+				output += 
+				'<div id="'+i+'" class="studentpult" onclick="deleteArray();">'+studentArray[i]+'</div>'; 
+				document.getElementById("studentareal").innerHTML = output;   
+			} 
+	}  
+
+
+</script>
+
+</head>
+<body>
+		<div id="wrapper">
+			<div id="class-room">
+				<div id="kateter" onclick="startArray();">Kateter</div> 
+				<p id="info">Trykk på kateteret for å vise elevpultene. <br> 
+					Trykk på elevpultene for å skjule dem. </p>
+				
+					<div id="studentareal"></div> 
+				
+			</div>
+			
+		</div>
+
+	<script> 
+	//writeArray(); 
+	</script> 
+
+</body>
+</html>
