@@ -3,7 +3,6 @@ $(document).ready(function()
 	
 	$("#mollyimg").click(function(){
 	   $("#hidden").click(); 
-	   loadImageFile(this); 
 	}); 
 	
 	$("#show").click(function(){ 
