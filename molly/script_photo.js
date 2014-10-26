@@ -1,4 +1,5 @@
 
+
 var photoButton = document.getElementById('snapPicture');
 photoButton.addEventListener('click', picCapture, false);
 

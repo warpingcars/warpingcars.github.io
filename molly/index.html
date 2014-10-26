@@ -4,13 +4,15 @@
 	</head>
 	<body>
 		<center>
-			<video id="webcam" width="200" height="200"></video>
+			<input type="file" accept="image/*" capture="camera"> 
 			<br>
+			<video id="webcam" width="200" height="200"></video>
+			<br> 
 			<input type="button" id="snapPicture" value="Snap A Picture!"/>
-			<p>
+			<br> 
 			<canvas id="capture" style="display:none;"></canvas>
 			<img id="canvasImg" alt="Right click to save">
-			<script src="script_photo.js"></script>
-		</center>
+			<!-- <script src="script_photo.js"></script> -->
+		</center> 
 	</body>
 </html>
