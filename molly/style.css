@@ -1,22 +1,11 @@
 #hidden 
 {
-    display:none;
-}
-.mollyimg 
+	display: none; 
+} 
+
+#mollyimg 
 {
 	width: 900px; 
 	height: 1200px; 
 	background: black;
-    color: black; 
-}
-
-#capture 
-{
-	display: none;
-} 
-
-.mollywang 
-{
-	width: 900px; 
-	height: 1200px; 
 }
