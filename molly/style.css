@@ -12,24 +12,27 @@
 {
 	width: 900px; 
 	height: 1200px; 
-	background: pink;
-	margin: 0px;
+	background: turquoise;
+	margin: 0px; 
+	border-radius: 20px; 
 }
 
 .imgedit 
 {
 	width: 900px; 
-	height: 900px; 
-	margin: 0px;
+	height: 1050px; 
+	margin: 0px; 
+	border-radius: 50px; 
 }
 
 .toolbox 
 {
 	width: 900px; 
 	height: 150px; 
-	background: orange; 
-	color: orange; 
-	margin: 0px;
+	background: brown; 
+	color: brown; 
+	margin: 0px; 
+	border-radius: 50px; 
 } 
 
 
@@ -37,6 +40,6 @@ h1
 {
 	font-size: 70px; 
 	text-align: center; 
-	color: turquoise; 
-	margin: 0px;
+	color: white; ; 
+	margin: 0px; 
 }
