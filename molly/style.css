@@ -3,9 +3,15 @@
 	display: none; 
 } 
 
-#mollyimg 
+.imgcap 
 {
 	width: 900px; 
 	height: 1200px; 
 	background: pink;
+}
+
+.imgedit 
+{
+	width: 675px; 
+	height: 900px; 
 }

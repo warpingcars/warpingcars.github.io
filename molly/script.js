@@ -10,6 +10,7 @@ $(document).ready(function()
 	else 
 	{
 		alert("Do you want to MollyWang this image?"); 
+        $("#mollyimg").attr( "class", "imgedit" ); 
 	}
 	   
 	}); 
