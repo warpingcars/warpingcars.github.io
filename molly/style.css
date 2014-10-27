@@ -10,36 +10,60 @@
 
 .imgcap 
 {
-	width: 900px; 
-	height: 1200px; 
-	background: turquoise;
-	margin: 0px; 
-	border-radius: 20px; 
+	width: 100%; 
+	height: 70%; 
+	background: turquoise; 
+	color: turquoise;
+	margin: 0%; 
+	border-radius: 60px; 
 }
 
 .imgedit 
 {
-	width: 900px; 
-	height: 1050px; 
-	margin: 0px; 
-	border-radius: 50px; 
+	width: 100%; 
+	height: 70%; 
+	background: black; 
+	color: black;
+	margin: 0%; 
+	border-radius: 60px; 
 }
 
 .toolbox 
 {
-	width: 900px; 
-	height: 150px; 
+	width: 100%; 
+	height: 15%; 
 	background: brown; 
 	color: brown; 
-	margin: 0px; 
-	border-radius: 50px; 
+	margin: 0%; 
+	border-radius: 60px; 
+} 
+
+.toolbox_disabled
+{
+	width: 100%; 
+	height: 15%; 
+	background: grey; 
+	color: grey; 
+	margin: 0%; 
+	border-radius: 60px; 
+	opacity: 0.3;
+    filter: alpha(opacity=30); 
+    pointer-events: none; 
 } 
 
 
 h1
 {
-	font-size: 70px; 
+	font-size: 500%; 
 	text-align: center; 
 	color: white; ; 
 	margin: 0px; 
+}
+
+p
+{
+	font-size: 500%; 
+	position: absolute; 
+	color: white;  
+	margin: 13%;
 }

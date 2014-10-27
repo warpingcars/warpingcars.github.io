@@ -1,18 +1,24 @@
 $(document).ready(function()
 { 
-	
+	$("#tap_pic").click(function()
+    { 
+        $("#mollyimg").click(); 
+    }); 
+
 	$("#mollyimg").click(function()
 	{ 
 	if ($("#mollyimg").attr('src') == "")
 	{
-	    $("#hidden").click(); 
-	}
-	else  
-	{ 
-        alert("Do you want to MollyWang this image?"); 
+        $("#tap_pic").attr( "class", "hidden" ); 
         $("#mollyimg").attr( "class", "imgedit" ); 
         $("#toolbox_up").attr( "class", "toolbox" ); 
         $("#toolbox_down").attr( "class", "toolbox" ); 
+        $("#hidden").click(); 
+	}
+	else  
+	{ 
+        var imgsrc = $("#mollyimg").attr('src'); 
+        alert("MollyWang this image "+imgsrc+" ? "); 
 	}
 	   
 	}); 
