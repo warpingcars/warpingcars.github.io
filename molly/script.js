@@ -18,11 +18,20 @@ $(document).ready(function()
 	}
 	else  
 	{ 
-        alert("Starting MollyWang! "); 
+        alert("You tapped your MollyWang. That's nasty! "); 
 	}
 	   
 	}); 
 	
+    $("#toolbox_up").click(function() 
+    {
+        alert("We are currently out of Molly Accessories. Please try again next week! "); 
+    }); 
+    $("#toolbox_down").click(function() 
+    {
+        alert("Molly Effects need further research in order to achieve an enhanced MollyWang experience. Be patient! "); 
+    }); 
+
 }); 
 
 function change(fileInput) {
