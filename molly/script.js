@@ -1,5 +1,5 @@
 $(document).ready(function()
-{
+{ 
 	
 	$("#mollyimg").click(function()
 	{ 
@@ -7,10 +7,11 @@ $(document).ready(function()
 	{
 	    $("#hidden").click(); 
 	}
-	else 
-	{
-		alert("Do you want to MollyWang this image?"); 
+	else  
+	{ 
+        alert("Do you want to MollyWang this image?"); 
         $("#mollyimg").attr( "class", "imgedit" ); 
+        $("#toolbox").attr( "class", "toolbox" ); 
 	}
 	   
 	}); 

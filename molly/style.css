@@ -3,6 +3,11 @@
 	display: none; 
 } 
 
+.hidden 
+{
+	display: none; 
+} 
+
 .imgcap 
 {
 	width: 900px; 
@@ -14,4 +19,12 @@
 {
 	width: 675px; 
 	height: 900px; 
+}
+
+.toolbox 
+{
+	width: 675px; 
+	height: 300px; 
+	background: black; 
+	color: black; 
 }
