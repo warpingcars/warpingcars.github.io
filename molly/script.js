@@ -3,9 +3,10 @@ $(document).ready(function()
 	$("#tap_pic").click(function()
     { 
         $("#mollyimg").click(); 
+
     }); 
 
-	$("#mollyimg").click(function()
+	$("#mollyimg").click(function() 
 	{ 
 	if ($("#mollyimg").attr('src') == "")
 	{
@@ -17,8 +18,7 @@ $(document).ready(function()
 	}
 	else  
 	{ 
-        var imgsrc = $("#mollyimg").attr('src'); 
-        alert("MollyWang this image "+imgsrc+" ? "); 
+        alert("Starting MollyWang! "); 
 	}
 	   
 	}); 
