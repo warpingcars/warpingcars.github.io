@@ -66,15 +66,15 @@ h1
 {
 	font-size: 100%; 
 	text-align: center; 
-	color: white; ; 
-	margin: auto; 
+	color: white; 
+	margin-top: 5%;  
 }
 
 p
 {
-	font-size: 100%; 
+	font-size: 300%; 
 	position: absolute; 
 	text-align: center; 
 	color: white;  
-	margin: auto;
+	margin-top: 40%;
 }
