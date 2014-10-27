@@ -11,7 +11,8 @@ $(document).ready(function()
 	{ 
         alert("Do you want to MollyWang this image?"); 
         $("#mollyimg").attr( "class", "imgedit" ); 
-        $("#toolbox").attr( "class", "toolbox" ); 
+        $("#toolbox_up").attr( "class", "toolbox" ); 
+        $("#toolbox_down").attr( "class", "toolbox" ); 
 	}
 	   
 	}); 
