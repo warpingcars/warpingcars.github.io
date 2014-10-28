@@ -43,8 +43,8 @@ width: 35em;
 
 .toolbox 
 {
-	width: 100%; 
-	height: 10%; 
+	width: 35em; 
+	height: 5em; 
 	background: brown; 
 	color: brown; 
 	margin: 0%; 
@@ -53,8 +53,8 @@ width: 35em;
 
 .toolbox_disabled
 {
-	width: 100%; 
-	height: 10%; 
+	width: 35em; 
+	height: 5em; 
 	background: grey; 
 	color: grey; 
 	margin: 0%; 
