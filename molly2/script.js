@@ -12,7 +12,6 @@ $(document).ready(function()
                      event.preventDefault();
              }
     } ,false); 
-*/
     window.addEventListener("scroll",function()
     {
     window.scrollTo(0,0)
@@ -23,6 +22,7 @@ $(document).ready(function()
         $("#mollyimg").click(); 
 
     }); 
+*/
 
 	$("#mollyimg").click(function() 
 	{ 
