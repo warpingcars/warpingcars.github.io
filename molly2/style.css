@@ -24,8 +24,8 @@ body
 
 .imgcap
 {
-width: 35em;
-height: 35em;
+width: 15em;
+height: 15em;
 background: turquoise;
 color: turquoise;
 margin: 0%;
@@ -36,14 +36,14 @@ border-radius: 60px;
 background: none repeat scroll 0 0 black;
 border-radius: 60px;
 color: black;
-height: 35em;
+height: 15em;
 margin: 0;
-width: 35em;
+width: 15em;
 }
 
 .toolbox 
 {
-	width: 35em; 
+	width: 15em; 
 	height: 5em; 
 	background: brown; 
 	color: brown; 
@@ -53,7 +53,7 @@ width: 35em;
 
 .toolbox_disabled
 {
-	width: 35em; 
+	width: 15em; 
 	height: 5em; 
 	background: grey; 
 	color: grey; 
