@@ -1,5 +1,7 @@
+
 $(document).ready(function()
 { 
+/*
     document.body.addEventListener('touchmove', function(e)
         { e.preventDefault(); 
         }); 
@@ -9,7 +11,8 @@ $(document).ready(function()
              {
                      event.preventDefault();
              }
-    } ,false);
+    } ,false); 
+*/
     window.addEventListener("scroll",function()
     {
     window.scrollTo(0,0)
