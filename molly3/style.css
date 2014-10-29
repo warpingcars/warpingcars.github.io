@@ -1,0 +1,106 @@
+
+/*
+
+html, body
+{
+overflow-x: hidden;
+}
+body
+{
+position: relative;
+width: 95%;
+height: 99%;
+}
+*/
+
+#hidden
+{
+display: none;
+}
+
+.hidden
+{
+display: none;
+}
+
+.imgcap
+{
+width: 100%;
+height: 75%;
+background: turquoise;
+color: turquoise;
+margin: 0%;
+border-radius: 60px;
+}
+
+.imgedit {
+background: none repeat scroll 0 0 black;
+border-radius: 60px;
+color: black;
+height: 75%;
+margin: 0;
+width: 100%;
+}
+
+#exit
+{
+height: 10%; 
+width: 15%;
+display: block;
+width: ;
+background: red; 
+color: red; 
+float: right;
+margin: auto;
+border-radius: 60px; 
+text-align: center; 
+}
+
+.toolbox
+{
+width: 100%;
+height: 10%;
+background: brown;
+color: brown;
+margin: 0%;
+border-radius: 60px;
+}
+
+.toolbox_disabled
+{
+width: 100%;
+height: 10%;
+background: grey;
+color: grey;
+margin: 0%;
+border-radius: 60px;
+opacity: 0.3;
+filter: alpha(opacity=30);
+pointer-events: none;
+}
+
+
+h1
+{
+font-size: 100%;
+text-align: center;
+color: white;
+margin: auto;
+} 
+
+h2
+{
+font-size: 100%;
+text-align: center;
+color: white;
+margin: 25%;
+}
+
+p
+{
+font-size: 200%;
+position: absolute;
+text-align: center;
+color: white;
+margin-top: 5%;
+}
