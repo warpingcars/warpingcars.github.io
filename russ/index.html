@@ -47,7 +47,16 @@
 		<div id="wrapper_random"> 
 			
 			<p>Random</p> 
-			
+			<h3>Yes or no?</h3> 
+
+			<form id="poll">
+			Yes:
+			<input type="radio" name="vote" value="0" onclick="getVote(this.value)">
+			<br>
+			No:
+			<input type="radio" name="vote" value="1" onclick="getVote(this.value)">
+			</form> 
+
 		</div> 
 
 		<div id="wrapper_mittrussekort"> 
