@@ -1,18 +1,3 @@
-
-/*
-
-html, body
-{
-overflow-x: hidden;
-}
-body
-{
-position: relative;
-width: 95%;
-height: 99%;
-}
-*/
-
 #hidden
 {
 display: none;
@@ -23,33 +8,27 @@ display: none;
 display: none;
 }
 
-.imgcap
-{
-width: 100%;
-height: 75%;
-background: turquoise;
-color: turquoise;
-margin: 0%;
-border-radius: 60px;
-}
-
-.imgedit 
-{
-background: none repeat scroll 0 0 black;
-border-radius: 60px;
-color: black;
-height: 75%;
-margin: 0;
-width: 100%;
-}
-
-#exit
+#upload 
 {
 height: 10%; 
 width: 15%;
 display: block;
 width: ;
-background: red; 
+background: purple; 
+color: red; 
+float: right;
+margin: auto;
+border-radius: 60px; 
+text-align: center; 
+} 
+
+#confirm
+{
+height: 10%; 
+width: 15%;
+display: block;
+width: ;
+background: yellow; 
 color: red; 
 float: right;
 margin: auto;
@@ -57,17 +36,8 @@ border-radius: 60px;
 text-align: center; 
 }
 
-.toolbox
-{
-width: 100%;
-height: 10%;
-background: brown;
-color: brown;
-margin: 0%;
-border-radius: 60px;
-}
 
-.toolbox_disabled
+#header
 {
 width: 100%;
 height: 10%;
@@ -80,6 +50,16 @@ filter: alpha(opacity=30);
 pointer-events: none;
 }
 
+.imgcap
+{ 
+position: absolute;
+width: 100%;
+height: 75%;
+background: turquoise;
+color: turquoise;
+margin: 0%;
+border-radius: 60px;
+}
 
 h1
 {
