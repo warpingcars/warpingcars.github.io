@@ -121,6 +121,6 @@ function getVote(int)
             document.getElementById("poll").innerHTML=xmlhttp.responseText;
         }
     }
-    xmlhttp.open("GET","poll_vote.php?vote="+int,true);
+    xmlhttp.open("GET","php/poll_vote.php?vote="+int,true);
     xmlhttp.send();
 }
