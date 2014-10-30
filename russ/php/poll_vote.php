@@ -31,8 +31,8 @@ fclose($fp);
 <td>Yes:</td>
 <td>
 <img src="blue.jpg"
-width='<?php echo(100*round($yes/($no+$yes),2)); ?>'
-height='20'>
+width='<?php echo(100*round($yes/($no+$yes),2)); ?>px'
+height='20px'>
 <?php echo(100*round($yes/($no+$yes),2)); ?>%
 </td>
 </tr>
@@ -40,8 +40,8 @@ height='20'>
 <td>No:</td>
 <td>
 <img src="red.jpg"
-width='<?php echo(100*round($no/($no+$yes),2)); ?>'
-height='20'>
+width='<?php echo(100*round($no/($no+$yes),2)); ?>px'
+height='20px'>
 <?php echo(100*round($no/($no+$yes),2)); ?>%
 </td>
 </tr>
