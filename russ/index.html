@@ -9,25 +9,33 @@
 		<script src="script.js"></script> 
 	</head>
 	<body>
-		<center id="center">
-			<div id="header"> 
-			
-				<div id="upload">
-					<h1><br>X</h1>
-				</div> 
-				<div id="new">
-					<h1><br>New Uploads</h1>
-				</div> 
-				<div id="popular">
-					<h1><br>Most Popular</h1>
-				</div> 
-				<div id="random">
-					<h1><br>Random</h1>
-				</div>
-			</div>  
 
+		<input id="hidden" type="file" accept="image/*" capture="camera" onchange="change(this);">
+
+		<div id="header">
+			
+			<div id="new">
+				<h1><br>New Uploads</h1>
+			</div> 
+
+			<div id="popular">
+				<h1><br>Most Popular</h1>
+			</div> 
+
+			<div id="random">
+				<h1><br>Random</h1>
+			</div>
+				
+			<div id="upload">
+			
+			</div> 
+
+		</div>
+
+		<div id="wrapper"> 
+			
 			<img src="" id="mittrussekort" class="hidden"></img> 
-			<input id="hidden" name="wangimg" type="file" accept="image/*" capture="camera" onchange="change(this);">
-		</center> 
+			
+		</div> 
 	</body>
 </html>
