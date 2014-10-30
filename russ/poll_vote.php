@@ -24,9 +24,8 @@ $insertvote = $yes."||".$no;
 $fp = fopen($filename,"w");
 fputs($fp,$insertvote);
 fclose($fp);
-?>
+?> 
 
-<h2>Result:</h2>
 <table>
 <tr>
 <td>Yes:</td>
