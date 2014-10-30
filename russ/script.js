@@ -32,7 +32,7 @@ $(document).ready(function()
     else  
     { 
         alert("Pupliserer nå ditt russekort!"); 
-        uploadRussekort(); 
+        //uploadRussekort(); 
     }  
     });  
 }); 
