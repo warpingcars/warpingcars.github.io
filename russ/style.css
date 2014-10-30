@@ -1,8 +1,3 @@
-#hidden
-{
-display: none;
-}
-
 .hidden
 {
 display: none;
@@ -21,7 +16,7 @@ filter: alpha(opacity=80);
 }
 
 
-#upload 
+#cambtn 
 {
 position: relative;
 height: 100%; 
@@ -79,6 +74,7 @@ text-align: center;
 
 .imgedit
 { 
+position: relative;
 width: 100%;
 height: 75%;
 background: turquoise;
@@ -106,8 +102,8 @@ margin: 25%;
 p
 {
 font-size: 200%;
-position: absolute;
+position: relative;
 text-align: center;
-color: white;
+color: black;
 margin-top: 5%;
 }

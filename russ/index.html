@@ -10,7 +10,7 @@
 	</head>
 	<body>
 
-		<input id="hidden" type="file" accept="image/*" capture="camera" onchange="change(this);">
+		<input id="snap" class="hidden" type="file" accept="image/*" capture="camera" onchange="change(this);">
 
 		<div id="header">
 			
@@ -26,15 +26,33 @@
 				<h1><br>Random</h1>
 			</div>
 				
-			<div id="upload">
+			<div id="cambtn">
 			
 			</div> 
 
 		</div>
 
-		<div id="wrapper"> 
+		<div id="wrapper_new"> 
 			
-			<img src="" id="mittrussekort" class="hidden"></img> 
+			<p>New</p>
+			
+		</div> 
+
+		<div id="wrapper_popular"> 
+			
+			<p>Popular</p>
+			
+		</div> 
+
+		<div id="wrapper_random"> 
+			
+			<p>Random</p> 
+			
+		</div> 
+
+		<div id="wrapper_mittrussekort"> 
+			
+			<img src="" id="mittrussekort" class="imgedit"></img> 
 			
 		</div> 
 	</body>

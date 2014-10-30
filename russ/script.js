@@ -1,37 +1,59 @@
 $(document).ready(function()
 {        
-	$("#upload").click(function() 
+	$("#wrapper_new").hide(); 
+    $("#wrapper_popular").hide(); 
+    $("#wrapper_random").hide(); 
+    $("#wrapper_mittrussekort").hide(); 
+
+    $("#cambtn").click(function() 
 	{ 
-	if ($("#mittrussekort").attr('src') == "")
-	{
-        $("#mittrussekort").attr( "class", "imgedit" ); 
-        $("#hidden").click(); 
-	}
-	else  
-	{ 
-        $("#mittrussekort").attr("src", ""); 
-        $("#hidden").click(); 
-	}  
-	}); 
+        $("#wrapper_new").hide(); 
+        $("#wrapper_popular").hide(); 
+        $("#wrapper_random").hide(); 
+
+    	if ($("#mittrussekort").attr('src') == "")
+    	{
+            $("#wrapper_mittrussekort").show(); 
+            $("#snap").click(); 
+    	}
+    	else  
+    	{ 
+            $("#mittrussekort").attr("src", ""); 
+            $("#snap").click(); 
+    	}  
+    }); 
+
+    $("#new").click(function()
+    {
+        $("#wrapper_new").show(); 
+        $("#wrapper_popular").hide(); 
+        $("#wrapper_random").hide(); 
+        $("#wrapper_mittrussekort").hide(); 
+
+    }); 
+
+    $("#popular").click(function()
+    {
+        $("#wrapper_new").hide(); 
+        $("#wrapper_popular").show(); 
+        $("#wrapper_random").hide(); 
+        $("#wrapper_mittrussekort").hide(); 
+
+    }); 
+
+    $("#random").click(function()
+    {
+        $("#wrapper_new").hide(); 
+        $("#wrapper_popular").hide(); 
+        $("#wrapper_random").show(); 
+        $("#wrapper_mittrussekort").hide(); 
+
+    }); 
 
     $("#mittrussekort").click(function()
     {
         rotateRussekort(); 
     }); 
-
-    $("#confirm").click(function() 
-    { 
-    if ($("#mittrussekort").attr('src') == "")
-    {
-         alert("Du må laste opp et russekort før du kan publisere det..."); 
-        $("#upload").click(); 
-    }
-    else  
-    { 
-        alert("Pupliserer nå ditt russekort!"); 
-        //uploadRussekort(); 
-    }  
-    });  
 }); 
 
 function change(fileInput) 
