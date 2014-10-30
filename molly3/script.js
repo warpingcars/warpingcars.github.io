@@ -16,20 +16,13 @@ $(document).ready(function()
     window.addEventListener("scroll",function()
     {
     window.scrollTo(0,0)
-    },false); 
-
-	$("#tap_pic").click(function()
-    { 
-        $("#mollyimg").click(); 
-
-    }); 
-*/
+    },false);   
+*/        
 
 	$("#mollyimg").click(function() 
 	{ 
 	if ($("#mollyimg").attr('src') == "")
 	{
-        $("#tap_pic").attr( "class", "hidden" ); 
         $("#mollyimg").attr( "class", "imgedit" ); 
         $("#toolbox_up").attr( "class", "toolbox" ); 
         $("#toolbox_down").attr( "class", "toolbox" ); 
@@ -55,10 +48,10 @@ $(document).ready(function()
     $("#exit").click(function() 
     {
         $("#mollyimg").attr('src', ""); 
-        $("#tap_pic").removeClass( "hidden" ); 
-        $("#mollyimg").attr( "class", "imgcap" ); 
-        $("#toolbox_up").attr( "class", "toolbox_disabled" ); 
-        $("#toolbox_down").attr( "class", "toolbox_disabled" ); 
+        $("#mollyimg").attr( "class", "imgedit" ); 
+        $("#toolbox_up").attr( "class", "toolbox" ); 
+        $("#toolbox_down").attr( "class", "toolbox" ); 
+        $("#hidden").click(); 
     }); 
 
 }); 
