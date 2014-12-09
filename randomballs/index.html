@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head> 
@@ -20,13 +22,21 @@
 	#player {
 		background-color: turquoise; 
 		height: 50px; 
-		width: 50px;
+		width: 50px; 
 		position: absolute; 
 		border-radius: 25px; 
 	} 
 
 	#enemy {
-		background-color: red; 
+		background-color: black; 
+		height: 50px; 
+		width: 50px;
+		position: absolute; 
+		border-radius: 25px; 
+	} 
+
+	.clone {
+		background-color: none; 
 		height: 50px; 
 		width: 50px;
 		position: absolute; 
@@ -50,7 +60,7 @@
 		$("#player").css('top', playerTop); 
 
 		var seconds = 0; 
-		
+
 		setInterval(function()
 		{ 
 			var randomLeft = Math.random(); 
@@ -71,8 +81,22 @@
 			{ 
 				enemyTop -= 50; 
 			} 
-			$("#enemy").css('left', enemyLeft); 
-			$("#enemy").css('top', enemyTop); 
+			
+			if(seconds % 1 == 0) 
+			{ 
+				var clone = $('#enemy').clone(); 
+				var randomColor = Math.floor((Math.random() * 12)); 
+				var cloneColor = ["yellow", "pink", "purple", "green", "turquoise", "red", "indigo", "blue", "lime", "brown", "black", "white"]; 
+				
+				$(clone).removeAttr('id'); 
+				$(clone).css('background-color', cloneColor[randomColor]); 
+				$(clone).attr('class', 'clone'); 
+				$(clone).css('left', enemyLeft); 
+				$(clone).css('top', enemyTop); 
+				$('#wrapper').append(clone); 
+			} 
+			
+			$("#enemy").animate({left: enemyLeft, top: enemyTop}, 0); 
 
 			if(randomLeft > 0.5)
 			{
@@ -93,7 +117,7 @@
 
 			seconds += 0.5; 
 
-		}, 500); 
+		}, 100); 
 
 		$(document).keydown(function(e) 
 		{ 
@@ -169,7 +193,7 @@
 </head>
 <body>
 	<div id="wrapper">
-		<div id="player"></div> 
+		<div id="player" style="display:none"></div> 
 		<div id="enemy"></div> 
 	</div>
 </body>
