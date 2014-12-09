@@ -77,6 +77,8 @@ var restart = 0;
 	{ 
 		init(); 
 		
+		$("#info").text("Use arrowkeys to move white ball to black ball."); 
+
 		function init() 
 		{
 			checkpointLeft = 0; 
@@ -144,8 +146,18 @@ var restart = 0;
 			{
 				increment = 0; 
 				gameCompleted = 1; 
+				checkpointLeft = 0; 
+				checkpointTop = 0;  
+				playerLeft = 750; 
+				playerTop = 350; 
+				$("#checkpoint").css('left', checkpointLeft); 
+				$("#checkpoint").css('top', checkpointTop); 
+				$("#player").css('left', playerLeft); 
+				$("#player").css('top', playerTop); 
+				$("#options").show(); 
 				$("#info").css('color', 'white'); 
 				$("#info").css('background-color', 'black'); 
+				$("#wrapper").css('background-color', 'pink'); 
 			}
 
 		}
@@ -161,10 +173,6 @@ var restart = 0;
 					secondsPerLevel = Math.ceil(secondsPerLevel) / 100;  
 					$("#info").text("Levels: "+numLevels+". Time: "+displaySeconds+"s!"); 
 				} 
-				else if (level != 0)
-				{
-					$("#info").text("Use arrowkeys to move white ball to black ball."); 
-				}
 			}
 			else 
 			{
@@ -244,8 +252,7 @@ var restart = 0;
 			{
 				newLevel(); 
 			} 
-		}); 
-			
+		}); 	
 	}); 
 </script>
 </head>
