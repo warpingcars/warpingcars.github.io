@@ -1,6 +1,6 @@
 var counties = ["Hordaland", "Akershus og Oslo", "Aust-Agder", "Buskerud", "Finnmark", "Hedmark", "Møre og Romsdal", "Nordland", "Nord-Trøndelag", "Oppland", "Rogaland", "Sogn og Fjordane", "Sør-Trøndelag", "Telemark", "Troms", "Vest-Agder", "Vestfold", "Østfold"]; 
 var random_counties = []; 			
-var highScoreArray = [0];
+var highScoreArray = [];
 		
 var round = 0; 
 var answer; 
@@ -14,12 +14,11 @@ var gameOver = 0;
 
 $(document).ready(function()
 { 
-	//Starting the Quiz 
 	init(); 
 
 	$("#remove").click(function()
 	{
-		highScoreArray = [];
+		highScoreArray = []; 
 		localStorage.highScoreArray = "";
 		localStorage.highScoreArrayStr = ""; 
 		$("#highscores").text(""); 
@@ -63,8 +62,7 @@ $(document).ready(function()
 		answer = event.target.alt; 
 		if(gameOver == 0)
 		{
-			checkAnswer(); 
-			//newQuestion(); 
+			checkAnswer();  
 		}
 	}); 
 });  
@@ -108,8 +106,7 @@ function newQuestion()
 		} 
 		else 
 		{
-			alert('Din nettleser str ikke localStorage'); 
-			//cookies(); 
+			alert('Din nettleser str ikke localStorage');
 		}
 
 		gameOver = 1; 
@@ -133,6 +130,7 @@ function checkAnswer()
 		points++; 
 		$("#points").text("Rett: "+Math.floor((points/(round))*100)+" %"); 
 		correct(); 
+		
 	} 
 	else 
 	{ 
@@ -194,7 +192,7 @@ function saveResultsToLocalStorage()
 function readResultsFromLocalStorage()
 {
 	// Read 
-	if(localStorage.getItem("highScoreArrayStr") != "")
+	if(localStorage.getItem("highScoreArrayStr") != null)
 	{
 		var highScoreArrayStr = localStorage.getItem("highScoreArrayStr"); 
 		highScoreArray = highScoreArrayStr.split(','); 
