@@ -108,6 +108,11 @@ var restart = 0;
 				numLevels = inputNumLevels; 
 				gameCompleted = 0; 
 				$("#options").hide(); 
+			} 
+			
+			if (numLevels != 3 || 5 || 10 || 15 || 20)
+			{
+				numLevels = 3; 
 			}
 
 			if (level < numLevels) 
@@ -163,7 +168,7 @@ var restart = 0;
 			}
 			else 
 			{
-				$("#info").text("Level: "+level+". Time: "+seconds+"s"); 
+				$("#info").text("Level: "+level+" / "+numLevels+". Time: "+Math.floor(seconds)+"s"); 
 				seconds += increment; 
 			}
 		}, 500); 
@@ -174,7 +179,7 @@ var restart = 0;
 	    	{
 	    		restart = 1; 
 	    		init(); 
-	    	}
+	    	} 
 	    	switch(e.which) 
 	    	{ 
 		        case 37: // left 
