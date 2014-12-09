@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head> 
@@ -10,7 +8,7 @@
 	} 
 
 	#wrapper {
-		margin: auto; 
+		margin: 0px auto; 
 		margin-top: 10px; 
 		padding: 0px; 
 		width: 800px;
@@ -33,15 +31,15 @@
 	} 
 
 	#options {
-		margin: 10px auto; 
+		margin: 0px auto; 
 		padding: 0px; 
-		width: 700px;
-		height: 400px; 
+		width: 150px;
+		height: 200px; 
 		background-color: lime; 
 		border-radius: 25px; 
 		position: relative; 
-		text-align: center; 
-		font-size: 250%; 
+		text-align: left; 
+		font-size: 100%; 
 	} 
 
 	#player {
@@ -63,38 +61,55 @@
 </style>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
 <script>
-	
+
+var checkpointLeft = 0; 
+var checkpointTop = 0;  
+var playerLeft = 750; 
+var playerTop = 350; 
+var seconds = 0; 
+var increment = 0; 
+var level = 0; 
+var gameCompleted = 0; 
+var numLevels = 0; 
+var restart = 0; 
+
 	$(document).ready(function()
 	{ 
-
-		var checkpointLeft = 0; 
-		var checkpointTop = 0;  
-		$("#checkpoint").css('left', checkpointLeft); 
-		$("#checkpoint").css('top', checkpointTop); 
-
-		var playerLeft = 750; 
-		var playerTop = 350; 
-		$("#player").css('left', playerLeft); 
-		$("#player").css('top', playerTop); 
-
-		var seconds = 0; 
-		var increment = 0; 
-		var level = 0; 
-		var gameCompleted = 0; 
-		var numLevels = 0; 
+		init(); 
 		
-		$("form").click(function()
+		function init() 
 		{
-			var inputNumLevels = $('input:checked').val(); 
-			inputNumLevels = parseInt(inputNumLevels); 
-			inputNumLevels = Math.floor(inputNumLevels); 
-			numLevels = inputNumLevels; 
-			$("#options").hide(); 
-		}); 
-		
+			checkpointLeft = 0; 
+			checkpointTop = 0;  
+			$("#checkpoint").css('left', checkpointLeft); 
+			$("#checkpoint").css('top', checkpointTop); 
+
+			playerLeft = 750; 
+			playerTop = 350; 
+			$("#player").css('left', playerLeft); 
+			$("#player").css('top', playerTop); 
+
+			$("#options").show(); 
+
+			seconds = 0; 
+			increment = 0; 
+			level = 0; 
+			numLevels = 0; 
+			gameCompleted = 0; 
+		} 		
 
 		function newLevel() 
 		{ 
+			if (level == 0) 
+			{
+				var inputNumLevels = $('input:checked').val(); 
+				inputNumLevels = Math.floor(inputNumLevels); 
+				inputNumLevels = parseInt(inputNumLevels); 
+				numLevels = inputNumLevels; 
+				gameCompleted = 0; 
+				$("#options").hide(); 
+			}
+
 			if (level < numLevels) 
 			{ 
 				gameCompleted = 0; 
@@ -124,9 +139,6 @@
 			{
 				increment = 0; 
 				gameCompleted = 1; 
-				$("#wrapper").css('background-color', 'black'); 
-				$("#player").css('background-color', 'black'); 
-				$("#checkpoint").css('background-color', 'black'); 
 				$("#info").css('color', 'white'); 
 				$("#info").css('background-color', 'black'); 
 			}
@@ -137,7 +149,7 @@
 		{ 
 			if(increment == 0)
 			{
-				if(gameCompleted == 1)
+				if(gameCompleted == 1 || restart == 1)
 				{ 
 					var displaySeconds = seconds - 0.5; 					
 					var secondsPerLevel = (displaySeconds / numLevels) * 100; 
@@ -158,6 +170,11 @@
 
 		$(document).keydown(function(e) 
 		{ 
+	    	if (gameCompleted == 1) 
+	    	{
+	    		restart = 1; 
+	    		init(); 
+	    	}
 	    	switch(e.which) 
 	    	{ 
 		        case 37: // left 
@@ -232,7 +249,7 @@
 		<div id="checkpoint"></div> 
 		<div id="player"></div> 
 		<div id="options"> 
-			<h1>LEVELS?</h1> 
+			<h1>...levels?</h1> 
 			<form id="inputLvl">
 			<input type="radio" name="inputLevels" value="3">3</input><br> 
 			<input type="radio" name="inputLevels" value="5">5</input><br> 
