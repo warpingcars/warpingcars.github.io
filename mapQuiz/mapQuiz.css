@@ -1,0 +1,132 @@
+.correct 
+{
+	color: lime;
+	font-family:helvetica;
+	padding-left:10px;
+	font-size:32px;
+}
+
+.incorrect  
+{ 
+    color:red;
+	font-family:helvetica;
+	font-weight:bold;
+	font-size:32px;
+}
+
+#quizbox
+{
+	position: relative; 
+	float: right; 
+	border: solid black 5px; 
+	border-radius: 10px; 
+	padding: 0px; 
+	width: 750px; 
+	height: 600px;
+} 
+
+#question
+{
+	position: relative;
+	border: solid black 5px; 
+	border-radius: 10px; 
+	padding: 10px; 
+	width: 650px; 
+	height: 150px; 
+} 
+
+#spm
+{
+	position: relative;
+	height: 200px; 
+	width: 650px; 
+	
+} 
+
+#banner 
+{
+	position: relative;
+	margin: auto;  
+	width: auto; 
+	display: block; 
+} 
+
+#title
+{
+	position: relative;
+	margin: auto;
+	font-family:arial;
+	border: solid black 5px; 
+	border-radius: 10px; 
+	padding: 25px; 
+	width: auto; 
+	display: inline-block; 
+	height: 50px;
+} 
+
+#seconds
+{
+	position: relative;
+	margin: auto; 	
+	border: solid black 5px; 
+	border-radius: 10px; 
+	padding: 25px; 
+	width: auto; 
+	height: 50px;
+	display: inline-block; 
+} 
+
+#points
+{
+	position: relative;
+	margin: auto; 	
+	border: solid black 5px; 
+	border-radius: 10px; 
+	padding: 25px; 
+	width: auto; 
+	height: 50px;
+	display: inline-block; 
+} 
+
+#tilbakemelding
+{
+	position: relative;
+	padding: 25px;	
+	border: solid black 5px; 
+	border-radius: 10px; 
+	margin-top: -200px;
+	float: right;
+	width: 100px; 
+	height: 50px;
+} 
+
+#resultat
+{
+	width: 100px;
+	margin: 20px;
+} 
+
+#button
+{
+	width:50px;
+	height:50px;
+	margin-left:200px; 
+}
+
+#leaderboards
+{
+	position: relative;
+	margin: 5px; 
+	width: 400px; 
+	height: 200px; 
+	border: solid black 5px; 
+	padding: 5px; 
+} 
+
+#highscores
+{
+	position: relative;
+	margin: 5px; 
+	width: 400px; 
+	height: 300px; 
+} 

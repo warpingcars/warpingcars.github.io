@@ -1,0 +1,55 @@
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Kjet & Karl mapQuiz</title> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+	<script src="mapQuiz.js" type="text/javascript"></script> 
+	<link href="mapQuiz.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<img class="Kart" src="images/kart/kart_fylker.gif" alt="Norgeskart" usemap="#kart_fylker_Map" />
+<map name="kart_fylker_Map" id="kart_fylker_Map">
+<area id="buskerud" data-search="buskerud" shape="poly" alt="Buskerud" coords="99,476, 85,445, 61,445, 61,425, 78,415, 85,417, 99,434, 114,434, 122,453, 116,476, 99,476" href="/Buskerud/Default.aspx" />
+<area id="oppland" data-search="oppland" shape="poly" alt="Oppland" coords="122,453, 122,438, 136,434, 128,417, 124,387, 114,364, 85,358, 66,369, 85,391, 78,408, 99,434, 114,434, 122,453" href="/Oppland/Default.aspx" />
+<area id="hedmark" data-search="hedmark" shape="poly" alt="Hedmark" coords="166,369, 166,387, 179,403, 172,434, 154,467, 131,434, 127,407, 127,392, 122,384, 114,364, 131,349, 145,349, 154,369, 166,369" href="/Hedmark/Default.aspx" />
+<area id="oslo" data-search="oslo" shape="poly" alt="Akershus og Oslo" coords="136,433, 146,456, 146,467, 116,473, 122,453, 122,438, 136,434" href="/AkershusogOslo/Default.aspx" />
+<area id="ostfold" data-search="østfold" shape="poly" alt="Østfold" coords="137,507, 127,491, 116,491, 116,476, 122,473, 146,467, 146,484, 137,507" href="/Ostfold/Default.aspx" />
+<area id="vestfold" data-search="vestfold" shape="poly" alt="Vestfold" coords="107,501, 116,476, 116,467, 107,467, 99,476, 99,495, 107,501" href="/Vestfold/Default.aspx" />
+<area id="telemark" data-search="telemark" shape="poly" alt="Telemark" coords="99,490, 99,476, 85,445, 61,445, 48,452, 57,476, 85,501, 99,491" href="/Telemark/Default.aspx" />
+<area id="austagder" data-search="aust-agder" shape="poly" alt="Aust-Agder" coords="85,501, 61,482, 48,460, 39,471, 42,494, 61,521, 85,501" href="/AustAgder/Default.aspx" />
+<area id="vestagder" data-search="vest-agder" shape="poly" alt="Vest-Agder" coords="61,521, 48,494, 42,494, 37,476, 21,513, 34,527, 61,521" href="/VestAgder/Default.aspx" />
+<area id="rogaland" data-search="rogaland" shape="poly" alt="Rogaland" coords="21,513, 26,494, 34,481, 48,452, 30,460, 7,460, 7,490, 21,513" href="/Rogaland/Default.aspx" />
+<area id="hordaland" data-search="hordaland" shape="poly" alt="Hordaland" coords="7,409, 7,453, 30,460, 51,450, 59,435, 61,425, 36,407, 7,409" href="/Hordaland/Default.aspx" />
+<area id="sogn" data-search="sogn" shape="poly" alt="Sogn og Fjordane" coords="61,425, 66,415, 78,415, 78,404, 85,391, 66,376, 66,369, 52,363, 40,367, 16,358, 0,398, 16,406, 26,404, 32,402, 36,407, 42,407, 47,416, 57,425, 61,425" href="/SognOgFjordane/Default.aspx" />
+<area id="more" data-search="møre" shape="poly" alt="Møre og Romsdal" coords="16,358, 44,369, 52,363, 62,369, 78,363, 102,359, 102,349, 116,338, 116,327, 78,320, 16,358" href="/MoreogRomsdal/Default.aspx" />
+<area id="sortrond" data-search="sør-trøndelag" shape="poly" alt="Sør-Trøndelag" coords="166,369, 154,369, 145,349, 131,349, 114,364, 102,359, 102,349, 116,338, 116,327, 102,327, 78,320, 137,270, 151,293, 131,320, 166,338, 166,369" href="/SorTrondelag/Default.aspx" />
+<area id="nordtrond" data-search="nord-trøndelag" shape="poly" alt="Nord-Trøndelag" coords="166,338, 155,330, 131,320, 151,293, 137,270, 146,248, 171,254, 172,261, 216,261, 227,270, 202,338, 166,338" href="/NordTrondelag/Default.aspx" />
+<area id="nordland" data-search="nordland" shape="poly" alt="Nordland" coords="216,261, 193,261, 172,261, 166,225, 216,103, 258,84, 264,92, 252,130, 282,119, 299,125, 257,193, 216,261" href="/Nordland/Default.aspx" />
+<area id="Troms" data-search="troms" shape="poly" alt="Troms" coords="326,135, 282,119, 252,130, 267,84, 308,49, 341,59, 357,81, 349,107, 326,135" href="/Troms/Default.aspx" />
+<area id="Finnmark" data-search="finnmark" shape="poly" alt="Finnmark" coords="341,54, 357,81, 349,107, 392,119, 455,86, 480,62, 468,30, 420,8, 352,29, 341,54" href="/Finnmark/Default.aspx" />
+</map>
+
+<div id="quizbox">	
+	<div id="banner">
+		<h1 id="title">mapQuiz</h1>
+		<h1 id="points">Rett: 0 %</h1> 
+		<h1 id="seconds">Tid: 0:0:0</h1>
+	</div> 
+	<br>
+	<div id="question"> 
+		<h1 id="spm"></h1> 
+	</div> 
+	<br> 
+	<br> 
+	<button id = "remove">Remove Top 5 Scores</button>
+	<div id="leaderboards"> 
+		<h1 id="highscores">HIGHSCORES: </h1> 
+	</div> 
+	<div id = 'tilbakemelding'>
+		<h1 id = 'resultat'></h1>
+	</div> 
+</div> 
+</body>
+</html>
