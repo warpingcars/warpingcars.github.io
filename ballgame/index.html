@@ -149,14 +149,14 @@ var restart = 0;
 		{ 
 			if(increment == 0)
 			{
-				if(gameCompleted == 1 || restart == 1)
+				if(gameCompleted == 1 && level != 0)
 				{ 
 					var displaySeconds = seconds - 0.5; 					
 					var secondsPerLevel = (displaySeconds / numLevels) * 100; 
 					secondsPerLevel = Math.ceil(secondsPerLevel) / 100;  
 					$("#info").text("Game completed in "+displaySeconds+"s ~~> "+secondsPerLevel+"s per level!"); 
 				} 
-				else 
+				else if (level != 0)
 				{
 					$("#info").text("Use arrowkeys to move white ball to black ball."); 
 				}
