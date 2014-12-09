@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<style>
+	html, body { 
+		margin: 0; 
+		padding: 0; 
+	} 
+
+	#wrapper {
+		margin: auto; 
+		margin-top: 10px; 
+		padding: 0px; 
+		width: 800px;
+		height: 400px; 
+		background-color: pink; 
+		border-radius: 25px; 
+		position: relative; 
+	} 
+
+	#info {
+		margin: 10px auto;
+		padding: 0px; 
+		width: 800px;
+		height: 100px; 
+		background-color: pink; 
+		border-radius: 25px; 
+		position: relative; 
+		text-align: center; 
+		font-size: 250%; 
+	} 
+
+	#options {
+		margin: 10px auto; 
+		padding: 0px; 
+		width: 700px;
+		height: 400px; 
+		background-color: lime; 
+		border-radius: 25px; 
+		position: relative; 
+		text-align: center; 
+		font-size: 250%; 
+	} 
+
+	#player {
+		background-color: white; 
+		height: 50px; 
+		width: 50px;
+		position: absolute; 
+		border-radius: 25px; 
+	} 
+
+	#checkpoint {
+		background-color: black; 
+		height: 50px; 
+		width: 50px;
+		position: absolute; 
+		border-radius: 25px; 
+	} 
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script>
+	
+	$(document).ready(function()
+	{ 
+
+		var checkpointLeft = 0; 
+		var checkpointTop = 0;  
+		$("#checkpoint").css('left', checkpointLeft); 
+		$("#checkpoint").css('top', checkpointTop); 
+
+		var playerLeft = 750; 
+		var playerTop = 350; 
+		$("#player").css('left', playerLeft); 
+		$("#player").css('top', playerTop); 
+
+		var seconds = 0; 
+		var increment = 0; 
+		var level = 0; 
+		var gameCompleted = 0; 
+		var numLevels = 0; 
+		
+		$("form").click(function()
+		{
+			var inputNumLevels = $('input:checked').val(); 
+			inputNumLevels = parseInt(inputNumLevels); 
+			inputNumLevels = Math.floor(inputNumLevels); 
+			numLevels = inputNumLevels; 
+			$("#options").hide(); 
+		}); 
+		
+
+		function newLevel() 
+		{ 
+			if (level < numLevels) 
+			{ 
+				gameCompleted = 0; 
+
+				var randomLeft = Math.floor((Math.random() * 15) + 1);  
+				var randomTop = Math.floor((Math.random() * 7) + 1); 
+				randomLeft *= 50; 
+				randomTop *= 50; 
+
+				var randomColor = Math.floor((Math.random() * 10)); 
+				var randomInfoColor = Math.floor((Math.random() * 10)); 
+				var backgroundColor = ["yellow", "pink", "purple", "green", "turquoise", "red", "indigo", "blue", "lime", "brown"]; 
+
+				checkpointLeft = randomLeft; 
+				checkpointTop = randomTop; 
+
+				$("#checkpoint").css('left', checkpointLeft); 
+				$("#checkpoint").css('top', checkpointTop); 
+				$("#wrapper").css('background-color', backgroundColor[randomColor]); 
+				$("#info").css('background-color', backgroundColor[randomInfoColor]); 
+
+				increment = 0.5; 
+				level ++;  
+			}
+			else if(level == numLevels)
+			{
+				increment = 0; 
+				gameCompleted = 1; 
+				$("#wrapper").css('background-color', 'black'); 
+				$("#player").css('background-color', 'black'); 
+				$("#checkpoint").css('background-color', 'black'); 
+				$("#info").css('color', 'white'); 
+				$("#info").css('background-color', 'black'); 
+			}
+
+		}
+		
+		setInterval(function()
+		{ 
+			if(increment == 0)
+			{
+				if(gameCompleted == 1)
+				{ 
+					var displaySeconds = seconds - 0.5; 
+					var secondsPerLevel = Math.ceil(displaySeconds / numLevels); 
+					$("#info").text("Game completed in "+displaySeconds+"s ~~> "+secondsPerLevel+"s per level!"); 
+				} 
+				else 
+				{
+					$("#info").text("Use arrowkeys to move white ball to black ball."); 
+				}
+			}
+			else 
+			{
+				$("#info").text("Level: "+level+". Time: "+seconds+"s"); 
+				seconds += increment; 
+			}
+		}, 500); 
+
+		$(document).keydown(function(e) 
+		{ 
+	    	switch(e.which) 
+	    	{ 
+		        case 37: // left 
+			        
+			        if(playerLeft > 0) 
+					{ 
+						playerLeft -= 50; 
+					} 
+					else 
+					{
+						playerLeft = 750; 
+					}
+
+		        break;
+
+		        case 38: // up 
+					
+					if(playerTop > 0) 
+					{ 
+						playerTop -= 50; 
+					} 
+					else 
+					{
+						playerTop = 350; 
+					}
+
+		        break;
+
+		        case 39: // right
+					
+					if(playerLeft < 750) 
+					{ 
+						playerLeft += 50;  
+					} 
+					else 
+					{
+						playerLeft = 0; 
+					}
+
+		        break;
+
+		        case 40: // down
+					
+					if(playerTop < 350) 
+					{ 
+						playerTop +=50;  
+					}  
+					else 
+					{
+						playerTop = 0; 
+					}
+		        break;
+
+		        default: return; // exit this handler for other keys
+	    	} 
+	    	e.preventDefault(); // prevent the default action (scroll / move caret) 
+	    	$("#player").css('left', playerLeft); 
+			$("#player").css('top', playerTop); 
+
+			if(playerLeft == checkpointLeft && playerTop == checkpointTop) 
+			{
+				newLevel(); 
+			} 
+		}); 
+			
+	}); 
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="checkpoint"></div> 
+		<div id="player"></div> 
+		<div id="options"> 
+			<h1>LEVELS?</h1> 
+			<form id="inputLvl">
+			<input type="radio" name="inputLevels" value="3">3</input><br> 
+			<input type="radio" name="inputLevels" value="5">5</input><br> 
+			<input type="radio" name="inputLevels" value="10">10</input><br> 
+			<input type="radio" name="inputLevels" value="15">15</input><br> 
+			<input type="radio" name="inputLevels" value="20">20</input>
+			</form>
+		</div>
+	</div>
+	<center>
+		<p id="info"></p>
+	</center> 
+	
+</body>
+</html>

@@ -26,6 +26,24 @@ fputs($fp,$insertvote);
 fclose($fp);
 ?> 
 
-<span><p>Yes: </p><?php echo(100*round($yes/($no+$yes),2)); ?><p>%</p></span>
-<br> 
-<span><p>No:</p><?php echo(100*round($no/($no+$yes),2)); ?><p>%</p></span>
+<h2>Result:</h2>
+<table>
+<tr>
+<td>Yes:</td>
+<td>
+<img src="../blue.jpg"
+width='<?php echo(100*round($yes/($no+$yes),2)); ?>'
+height='20'>
+<?php echo(100*round($yes/($no+$yes),2)); ?>%
+</td>
+</tr>
+<tr>
+<td>No:</td>
+<td>
+<img src="../red.jpg"
+width='<?php echo(100*round($no/($no+$yes),2)); ?>'
+height='20'>
+<?php echo(100*round($no/($no+$yes),2)); ?>%
+</td>
+</tr>
+</table> 

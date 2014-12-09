@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<style>
+	html, body { 
+		margin: 0; 
+		padding: 0; 
+	} 
+
+	#wrapper {
+		margin: 50px auto;
+		padding: 0px; 
+		width: 800px;
+		height: 400px; 
+		background-color: black; 
+		border-radius: 25px; 
+		position: relative;
+	} 
+
+	#player {
+		background-color: turquoise; 
+		height: 50px; 
+		width: 50px;
+		position: absolute; 
+		border-radius: 25px; 
+	} 
+
+	#enemy {
+		background-color: red; 
+		height: 50px; 
+		width: 50px;
+		position: absolute; 
+		border-radius: 25px; 
+	} 
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script>
+	
+	$(document).ready(function(){ 
+
+		var enemyLeft = 0; 
+		var enemyTop = 0;  
+		$("#enemy").css('left', enemyLeft); 
+		$("#enemy").css('top', enemyTop); 
+
+		var playerLeft = 750; 
+		var playerTop = 350; 
+		$("#player").css('left', playerLeft); 
+		$("#player").css('top', playerTop); 
+
+		var seconds = 0; 
+		
+		setInterval(function()
+		{ 
+			var randomLeft = Math.random(); 
+			var randomTop = Math.random(); 
+			if(enemyLeft == 750) 
+			{ 
+				enemyLeft -= 50; 
+			} 
+			if(enemyLeft == 0) 
+			{ 
+				enemyLeft += 50; 
+			} 
+			if(enemyTop == 0) 
+			{ 
+				enemyTop += 50; 
+			} 
+			if(enemyTop == 350) 
+			{ 
+				enemyTop -= 50; 
+			} 
+			$("#enemy").css('left', enemyLeft); 
+			$("#enemy").css('top', enemyTop); 
+
+			if(randomLeft > 0.5)
+			{
+				enemyLeft += 50; 
+			}
+			if (randomLeft < 0.5)
+			{
+				enemyLeft -= 50; 
+			}
+			if(randomTop > 0.5)
+			{
+				enemyTop += 50; 
+			} 
+			if (randomTop < 0.5) 
+			{
+				enemyTop -= 50; 
+			}
+
+			seconds += 0.5; 
+
+		}, 500); 
+
+		$(document).keydown(function(e) 
+		{ 
+	    	switch(e.which) 
+	    	{ 
+		        case 37: // left 
+			        
+			        if(playerLeft > 0) 
+					{ 
+						playerLeft -= 50; 
+					} 
+					else 
+					{
+						playerLeft = 750; 
+					}
+
+		        break;
+
+		        case 38: // up 
+					
+					if(playerTop > 0) 
+					{ 
+						playerTop -= 50; 
+					} 
+					else 
+					{
+						playerTop = 350; 
+					}
+
+		        break;
+
+		        case 39: // right
+					
+					if(playerLeft < 750) 
+					{ 
+						playerLeft += 50;  
+					} 
+					else 
+					{
+						playerLeft = 0; 
+					}
+
+		        break;
+
+		        case 40: // down
+					
+					if(playerTop < 350) 
+					{ 
+						playerTop +=50;  
+					}  
+					else 
+					{
+						playerTop = 0; 
+					}
+		        break;
+
+		        default: return; // exit this handler for other keys
+	    	} 
+	    	e.preventDefault(); // prevent the default action (scroll / move caret) 
+	    	$("#player").css('left', playerLeft); 
+			$("#player").css('top', playerTop); 
+
+			if(playerLeft == enemyLeft && playerTop == enemyTop) 
+			{
+				alert("The enemy seems to have died... And you killed it in "+seconds+" seconds!"); 
+				
+				seconds = 0; 
+			} 
+		}); 
+			
+	}); 
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="player"></div> 
+		<div id="enemy"></div> 
+	</div>
+</body>
+</html>

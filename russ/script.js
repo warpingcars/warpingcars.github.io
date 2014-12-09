@@ -1,5 +1,7 @@
 $(document).ready(function()
-{        
+{      
+    $(".vote").prop("checked", false);
+
 	$("#wrapper_new").hide(); 
     $("#wrapper_popular").hide(); 
     $("#wrapper_random").hide(); 
