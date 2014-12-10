@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>Oscar's Game: BALLS! v2.1</title>
+<style>
+	html, body { 
+		margin: 0; 
+		padding: 0; 
+	} 
+
+	#wrapper {
+		margin: 0px auto; 
+		margin-top: 10px; 
+		padding: 0px; 
+		width: 800px;
+		height: 400px; 
+		background-color: pink; 
+		border-radius: 25px; 
+		position: relative; 
+	} 
+
+	#info {
+		margin: 10px auto;
+		padding: 0px; 
+		width: 800px;
+		height: 100px; 
+		background-color: pink; 
+		border-radius: 25px; 
+		position: relative; 
+		text-align: center; 
+		font-size: 250%; 
+	} 
+
+	#options {
+		margin: 0px auto; 
+		padding: 0px; 
+		width: 150px;
+		height: 200px; 
+		background-color: lime; 
+		border-radius: 25px; 
+		position: relative; 
+		text-align: left; 
+		font-size: 100%; 
+	} 
+
+	#player {
+		background-color: white; 
+		height: 50px; 
+		width: 50px;
+		position: absolute; 
+		border-radius: 25px; 
+	} 
+
+	#checkpoint {
+		background-color: black; 
+		height: 50px; 
+		width: 50px;
+		position: absolute; 
+		border-radius: 25px; 
+	} 
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script>
+
+var checkpointLeft = 0; 
+var checkpointTop = 0;  
+var playerLeft = 750; 
+var playerTop = 350; 
+var seconds = 0; 
+var increment = 0; 
+var level = 0; 
+var gameCompleted = 0; 
+var restart = 0; 
+var points = 0; 
+var levelTime = 0; 
+var difficulty = 0; 
+var difficultyStr = ""; 
+
+	$(document).ready(function()
+	{ 
+		init(); 
+		
+		$("#info").text("Use arrowkeys to move white ball to black ball."); 
+
+		function init() 
+		{
+			checkpointLeft = 0; 
+			checkpointTop = 0;  
+			$("#checkpoint").css('left', checkpointLeft); 
+			$("#checkpoint").css('top', checkpointTop); 
+
+			playerLeft = 750; 
+			playerTop = 350; 
+			$("#player").css('left', playerLeft); 
+			$("#player").css('top', playerTop); 
+
+			$("#options").show(); 
+
+			seconds = 0; 
+			increment = 0; 
+			level = 0; 
+			gameCompleted = 0; 
+			points = 0; 
+			levelTime = 0; 
+		} 		
+
+		function newLevel() 
+		{ 
+			levelTime = 0; 
+			
+			if (level == 0) 
+			{
+				difficultyStr = $('input:checked').attr('alt'); 
+				var inputDifficulty = $('input:checked').val(); 
+				inputDifficulty = parseInt(inputDifficulty); 
+				difficulty = inputDifficulty; 
+				gameCompleted = 0; 
+				$("#options").hide(); 
+				points = 0; 
+			} 
+
+			if (difficulty != 3 && difficulty != 5 && difficulty != 10 && difficulty != 15 && difficulty != 20) 
+			{
+				difficulty = 3.5; 
+			}
+
+			if (level < 10) 
+			{ 
+				gameCompleted = 0; 
+
+				var randomLeft = Math.floor((Math.random() * 15) + 1);  
+				var randomTop = Math.floor((Math.random() * 7) + 1); 
+				randomLeft *= 50; 
+				randomTop *= 50; 
+
+				var randomColor = Math.floor((Math.random() * 10)); 
+				var randomInfoColor = Math.floor((Math.random() * 10)); 
+				var backgroundColor = ["yellow", "pink", "purple", "green", "turquoise", "red", "indigo", "blue", "lime", "brown"]; 
+
+				checkpointLeft = randomLeft; 
+				checkpointTop = randomTop; 
+
+				$("#checkpoint").animate({left: checkpointLeft, top: checkpointTop}, 350); 
+				//$("#checkpoint").css('left', checkpointLeft); 
+				//$("#checkpoint").css('top', checkpointTop); 
+				$("#wrapper").css('background-color', backgroundColor[randomColor]); 
+				$("#info").css('background-color', backgroundColor[randomInfoColor]); 
+
+				increment = 0.5; 
+				level ++;  
+			}
+			else if(level == 10)
+			{
+				increment = 0; 
+				gameCompleted = 1; 
+				checkpointLeft = 0; 
+				checkpointTop = 0;  
+				playerLeft = 750; 
+				playerTop = 350; 
+				$("#checkpoint").css('left', checkpointLeft); 
+				$("#checkpoint").css('top', checkpointTop); 
+				$("#player").css('left', playerLeft); 
+				$("#player").css('top', playerTop); 
+				$("#options").show(); 
+				$("#info").css('color', 'white'); 
+				$("#info").css('background-color', 'black'); 
+				$("#wrapper").css('background-color', 'pink'); 
+			}
+
+		}
+		
+		setInterval(function()
+		{ 
+			if(increment == 0)
+			{
+				if(gameCompleted == 1 && level != 0)
+				{ 
+					var displaySeconds = seconds - 0.5; 
+					$("#info").text(difficultyStr+"! Points: "+points+"/10 !"); 
+				} 
+			}
+			else 
+			{
+				$("#info").text(difficultyStr+"! Points: "+points+". Round: "+level); 
+				seconds += increment; 
+				levelTime += increment; 
+
+				if(levelTime % difficulty == 0) 
+				{
+					newLevel(); 
+				}
+			} 
+		}, 500); 
+
+		$(document).keydown(function(e) 
+		{ 
+	    	if (gameCompleted == 1) 
+	    	{
+	    		restart = 1; 
+	    		init(); 
+	    	} 
+	    	switch(e.which) 
+	    	{ 
+		        case 37: // left 
+			        
+			        if(playerLeft > 0) 
+					{ 
+						playerLeft -= 50; 
+					} 
+					else 
+					{
+						playerLeft = 750; 
+					}
+
+		        break;
+
+		        case 38: // up 
+					
+					if(playerTop > 0) 
+					{ 
+						playerTop -= 50; 
+					} 
+					else 
+					{
+						playerTop = 350; 
+					}
+
+		        break;
+
+		        case 39: // right
+					
+					if(playerLeft < 750) 
+					{ 
+						playerLeft += 50;  
+					} 
+					else 
+					{
+						playerLeft = 0; 
+					}
+
+		        break;
+
+		        case 40: // down
+					
+					if(playerTop < 350) 
+					{ 
+						playerTop +=50;  
+					}  
+					else 
+					{
+						playerTop = 0; 
+					}
+		        break;
+
+		        default: return; // exit this handler for other keys
+	    	} 
+	    	e.preventDefault(); // prevent the default action (scroll / move caret) 
+	      //$("#player").animate({left: playerLeft, top: playerTop}, 100); 
+	    	$("#player").css('left', playerLeft); 
+			$("#player").css('top', playerTop); 
+			
+			if(playerLeft == checkpointLeft && playerTop == checkpointTop) 
+			{
+				if(level != 0)
+				{
+					points++; 
+				}
+				newLevel(); 
+			} 
+		}); 	
+	}); 
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="checkpoint"></div> 
+		<div id="player"></div> 
+		<div id="options"> 
+			<h1>Choose Difficulty: </h1> 
+			<form id="inputLvl">
+			<input type="radio" name="difficulty" value="3.5" alt="Easy">Easy</input><br> 
+			<input type="radio" name="difficulty" value="2" alt="Medium">Medium</input><br> 
+			<input type="radio" name="difficulty" value="1.5" alt="Hard">Hard</input><br> 
+			<input type="radio" name="difficulty" value="1" alt="Extreme">Extreme</input>
+			</form>
+		</div>
+	</div>
+	<center>
+		<p id="info"></p>
+	</center> 
+	
+</body>
+</html>
