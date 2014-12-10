@@ -120,9 +120,10 @@ var difficultyStr = "";
 				points = 0; 
 			} 
 
-			if (difficulty != 3 && difficulty != 5 && difficulty != 10 && difficulty != 15 && difficulty != 20) 
+			if (difficulty != 3 && difficulty != 2 && difficulty != 1.5 && difficulty != 1) 
 			{
-				difficulty = 3.5; 
+				difficulty = 3; 
+				difficultyStr = "Easy"; 
 			}
 
 			if (level < 10) 
@@ -279,7 +280,7 @@ var difficultyStr = "";
 		<div id="options"> 
 			<h1>Choose Difficulty: </h1> 
 			<form id="inputLvl">
-			<input type="radio" name="difficulty" value="3.5" alt="Easy">Easy</input><br> 
+			<input type="radio" name="difficulty" value="3" alt="Easy">Easy</input><br> 
 			<input type="radio" name="difficulty" value="2" alt="Medium">Medium</input><br> 
 			<input type="radio" name="difficulty" value="1.5" alt="Hard">Hard</input><br> 
 			<input type="radio" name="difficulty" value="1" alt="Extreme">Extreme</input>
