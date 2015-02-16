@@ -87,7 +87,6 @@ var username = "Username";
 
 		function init() 
 		{ 
-			username = prompt("Please enter your username: ", username); 
 			checkpointLeft = 0; 
 			checkpointTop = 0;  
 			$("#checkpoint").css('left', checkpointLeft); 
@@ -156,8 +155,6 @@ var username = "Username";
 			}
 			else if(level == 10)
 			{
-	    		initCloud(); 
-
 				increment = 0; 
 				gameCompleted = 1; 
 				checkpointLeft = 0; 
@@ -172,6 +169,9 @@ var username = "Username";
 				$("#info").css('color', 'white'); 
 				$("#info").css('background-color', 'black'); 
 				$("#wrapper").css('background-color', 'pink'); 
+
+				username = prompt("Please enter your username: ", username); 
+	    		initCloud(); 
 			}
 
 		}
@@ -282,7 +282,16 @@ function initCloud()
 	Parse.initialize("Fm1Wji0fKHPLGkHkhnSsLu17UKGc2TuGe4DHC5Mi", "p0kpVyp9eXOWhs4znYpElbmMjxgW2pBmYvZpDVQe"); 
     var TestObject = Parse.Object.extend("TestObject"); 
     var testObject = new TestObject(); 
+
 	testObject.save({player: username}, {
+      success: function(object) {
+        //alert("yayay!"); 
+      },
+      error: function(model, error) {
+        //alert("woops!"); 
+      }
+    }); 
+    testObject.save({points: points}, {
       success: function(object) {
         //alert("yayay!"); 
       },
@@ -298,7 +307,7 @@ function initCloud()
         //alert("woops!"); 
       }
     });
-	testObject.save({score: points}, {
+	testObject.save({score: points * (7 - difficulty * 2)}, {
       success: function(object) {
         //alert("yayay!"); 
       },
