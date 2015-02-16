@@ -77,6 +77,7 @@ var points = 0;
 var levelTime = 0; 
 var difficulty = 0; 
 var difficultyStr = ""; 
+var username = "Username"; 
 
 	$(document).ready(function()
 	{ 
@@ -85,7 +86,8 @@ var difficultyStr = "";
 		$("#info").text("Use arrowkeys to move white ball to black ball."); 
 
 		function init() 
-		{
+		{ 
+			username = prompt("Please enter your username: ", username); 
 			checkpointLeft = 0; 
 			checkpointTop = 0;  
 			$("#checkpoint").css('left', checkpointLeft); 
@@ -280,7 +282,7 @@ function initCloud()
 	Parse.initialize("Fm1Wji0fKHPLGkHkhnSsLu17UKGc2TuGe4DHC5Mi", "p0kpVyp9eXOWhs4znYpElbmMjxgW2pBmYvZpDVQe"); 
     var TestObject = Parse.Object.extend("TestObject"); 
     var testObject = new TestObject(); 
-	testObject.save({score: points}, {
+	testObject.save({player: username}, {
       success: function(object) {
         //alert("yayay!"); 
       },
@@ -288,7 +290,15 @@ function initCloud()
         //alert("woops!"); 
       }
     });
-    testObject.save({difficulty: difficultyStr}, {
+	testObject.save({difficulty: difficultyStr}, {
+      success: function(object) {
+        //alert("yayay!"); 
+      },
+      error: function(model, error) {
+        //alert("woops!"); 
+      }
+    });
+	testObject.save({score: points}, {
       success: function(object) {
         //alert("yayay!"); 
       },
