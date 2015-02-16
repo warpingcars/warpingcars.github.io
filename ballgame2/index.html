@@ -104,8 +104,6 @@ var difficultyStr = "";
 			gameCompleted = 0; 
 			points = 0; 
 			levelTime = 0; 
-
-			initCloud(); 
 		} 		
 
 		function newLevel() 
@@ -156,6 +154,8 @@ var difficultyStr = "";
 			}
 			else if(level == 10)
 			{
+	    		initCloud(); 
+
 				increment = 0; 
 				gameCompleted = 1; 
 				checkpointLeft = 0; 
@@ -280,12 +280,20 @@ function initCloud()
 	Parse.initialize("Fm1Wji0fKHPLGkHkhnSsLu17UKGc2TuGe4DHC5Mi", "p0kpVyp9eXOWhs4znYpElbmMjxgW2pBmYvZpDVQe"); 
     var TestObject = Parse.Object.extend("TestObject"); 
     var testObject = new TestObject(); 
-      testObject.save({foo: "bar"}, {
+	testObject.save({score: points}, {
       success: function(object) {
-        alert("yayay!"); 
+        //alert("yayay!"); 
       },
       error: function(model, error) {
-        alert("woops!"); 
+        //alert("woops!"); 
+      }
+    });
+    testObject.save({difficulty: difficultyStr}, {
+      success: function(object) {
+        //alert("yayay!"); 
+      },
+      error: function(model, error) {
+        //alert("woops!"); 
       }
     });
 }
